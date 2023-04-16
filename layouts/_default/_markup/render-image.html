@@ -21,6 +21,6 @@
       <img loading="lazy" src="{{ $img.RelPermalink }}" type="" alt="{{ $.Text }}" {{ with $.Title}} title="{{ . }}" {{ end }} />
     {{- end -}}
   {{- else -}}
-    {{- warnf "No image found for %s from %s" .Destination .Page.File }}
+    <img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
   {{- end -}}
 {{- end -}}

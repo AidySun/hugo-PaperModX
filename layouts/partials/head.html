@@ -29,18 +29,18 @@
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
 
 {{- if site.Params.analytics.googlesiteVerificationTag }}
-{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+{{- if hugo.IsProduction }}
 <meta name="google-site-verification" content="{{ site.Params.analytics.googlesiteVerificationTag }}">
 {{- end }}
 {{- end }}
 
 {{- if site.Params.analytics.baidu }}
-{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+{{- if hugo.IsProduction }}
 <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?2d2cc293a53355fbf39bb29e2d9a2f7a";
+      hm.src = "ahttps://hm.baidu.com/hm.js?2d2cc293a53355fbf39bb29e2d9a2f7a";
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
@@ -91,7 +91,7 @@
 {{ end -}}
 
 {{- /* Misc */}}
-{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+{{- if hugo.IsProduction }}
   {{- if site.GoogleAnalytics }}
     {{- template "_internal/google_analytics.html" . }}
   {{- end -}}

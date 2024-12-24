@@ -98,8 +98,9 @@
 {{ end -}}
 
 {{- /* Misc */}}
-{{- if hugo.IsProduction }}
-  {{- if site.GoogleAnalytics }}
+
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+  {{- if .Site.Config.Services.GoogleAnalytics.ID }}
     {{- template "_internal/google_analytics.html" . }}
   {{- end -}}
   {{- if site.Params.useCustomAnalytics }}

@@ -407,7 +407,7 @@ h6:hover .anchor {
     padding-bottom: calc(var(--content-gap) * 2);
 }
 .comments-separator {
-    height: 3px;
+    height: 2px;
     background-color: var(--tertiary);
 }
 
